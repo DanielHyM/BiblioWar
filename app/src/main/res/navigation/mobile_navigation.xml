@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.bibliowar.ui.home.HomeFragment"
+        android:label="@string/home_title"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/characterFragment"
+        android:name="com.example.bibliowar.ui.personajes.CharacterFragment"
+        android:label="@string/character_title"
+        tools:layout="@layout/fragment_character" />
+
+    <fragment
+        android:id="@+id/placesFragment"
+        android:name="com.example.bibliowar.ui.lugares.PlacesFragment"
+        android:label="@string/places_title"
+        tools:layout="@layout/fragment_places" />
+
+
+</navigation>

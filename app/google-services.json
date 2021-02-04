@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "927968173436",
+    "project_id": "bibliowar-dffb0",
+    "storage_bucket": "bibliowar-dffb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927968173436:android:6efb89a6bbb8bad3b1d8f9",
+        "android_client_info": {
+          "package_name": "com.example.bibliowar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927968173436-hesl1sp7ptsb7hv7c4fb1bgtc62jcpfc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bibliowar",
+            "certificate_hash": "eda99d5693d5be3e262581c8025df0c20772ad73"
+          }
+        },
+        {
+          "client_id": "927968173436-h7cqdp5p3beq7c9epu9jigsq7jder3c4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0i9lrajB_F6kCsf5SZCBITDINkt0XVTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927968173436-h7cqdp5p3beq7c9epu9jigsq7jder3c4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
