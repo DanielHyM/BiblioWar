@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,11 @@ import com.example.bibliowar.R;
 import com.example.bibliowar.ui.personajes.CharacterAdapter;
 import com.example.bibliowar.ui.personajes.CharacterFragment;
 import com.example.bibliowar.ui.personajes.Persona;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
@@ -28,11 +34,12 @@ public class PersonFavoriteFragment extends Fragment {
     private CharacterAdapter adapter;
 
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_person_favorite, container, false);
 
+        return inflater.inflate(R.layout.activity_person_favorite, container, false);
     }
 
 
@@ -45,6 +52,8 @@ public class PersonFavoriteFragment extends Fragment {
         rvPersona.setLayoutManager(glm);
         adapter = new CharacterAdapter(((MainActivity)getActivity()).listaPersonas, view.getContext());
         rvPersona.setAdapter(adapter);
+
+
 
 
 

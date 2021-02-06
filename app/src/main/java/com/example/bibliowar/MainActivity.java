@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button setting;
     public  ArrayList<Persona> listaPersonas = new ArrayList<>();
     public ArrayList<Lugar> listaLugares = new ArrayList<>();
-    private Favoritos fav;
+    public  Favoritos fav;
     DrawerLayout drawer;
 
 
@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         fav = new Favoritos();
         fav.setUser(FirebaseAuth.getInstance().getCurrentUser().getEmail().toString());
-
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
