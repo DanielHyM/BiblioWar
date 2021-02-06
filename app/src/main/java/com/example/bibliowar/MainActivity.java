@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -12,11 +13,16 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.example.bibliowar.ui.favoritos.Favoritos;
+import com.example.bibliowar.ui.lugares.Lugar;
+import com.example.bibliowar.ui.personajes.Persona;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -25,17 +31,27 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private AppBarConfiguration mAppBarConfiguration;
     private NavController navController;
     private DrawerLayout mDrawerLayout;
     private Button setting;
+    private ArrayList<Persona> listaPersonas = new ArrayList<>();
+    private ArrayList<Lugar> listaLugares = new ArrayList<>();
+    private Favoritos fav;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        fav = new Favoritos();
+        fav.setUser(FirebaseAuth.getInstance().getCurrentUser().getEmail().toString());
+
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -63,10 +79,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationUI.setupWithNavController(navigationView, navController);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-
+        if(getIntent() != null){
+            if(getIntent().getParcelableExtra("persona") != null){
+                Persona p = getIntent().getParcelableExtra("persona");
+                listaPersonas.add(p);
+                fav.setListaPersonas(listaPersonas);
+            }
+        }
 
     }
+
+
+
+
 
 
     @Override
@@ -114,7 +139,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_favorites:
-                navController.navigate(R.id.favoriteFragment);
+
+                if(listaPersonas.size() > 0) {
+                    Bundle b = new Bundle();
+                    b.putParcelableArrayList("listaPersonas", listaPersonas);
+                    navController.navigate(R.id.favoriteFragment,b);
+                }else{
+                    Toast.makeText(getApplicationContext(),"NO TIENES FAVORITOS AÚN", Toast.LENGTH_LONG).show();
+                }
+
                 break;
 
 

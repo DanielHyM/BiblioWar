@@ -29,6 +29,8 @@
     <string name="character_title">Personajes Históricos</string>
     <string name="places_title">Lugares Históricos</string>
     <string name="favorites_title">Mis favoritos</string>
+    <string name="favorite_person">Mis Personajes Historicos Favoritos</string>
+    <string name="favorite_place">Mis Lugares Historicos Favoritos</string>
 
 
 </resources>
