@@ -119,7 +119,7 @@ public class PlacesFragment extends Fragment {
                         rvLugares = view.findViewById(R.id.rv_places);
                         glm = new GridLayoutManager(view.getContext(),1);
                         rvLugares.setLayoutManager(glm);
-                        adapter = new PlacesAdapter(listaLugares, view.getContext());
+                        adapter = new PlacesAdapter(listaLugares, view.getContext(), PlacesFragment.this);
                         rvLugares.setAdapter(adapter);
 
                     }

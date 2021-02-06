@@ -47,6 +47,7 @@ public class PersonFavoriteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
         rvPersona = view.findViewById(R.id.rv_favorite_character);
         glm = new GridLayoutManager(view.getContext(), 1);
         rvPersona.setLayoutManager(glm);

@@ -25,6 +25,7 @@ import java.util.ArrayList;
 public class FavoriteFragment extends Fragment {
 
     Button favoriteCharacter;
+    Button favoritePlace;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -90,6 +91,15 @@ public class FavoriteFragment extends Fragment {
 
             }
         });
+
+        favoritePlace = view.findViewById(R.id.button_favorite_place);
+        favoritePlace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).navController.navigate(R.id.placeFavoriteFragment);
+            }
+        });
+
 
     }
 }

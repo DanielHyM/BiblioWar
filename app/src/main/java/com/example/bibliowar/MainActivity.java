@@ -57,14 +57,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        if(!fav.getUser().equals("admin@admin.es")) {
+            fab.setVisibility(View.INVISIBLE);
+
+         }else{
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            });
+        }
+
+
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
@@ -134,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_favorites:
 
-                if(listaPersonas.size() > 0) {
+                if(listaPersonas.size() > 0 || listaLugares.size() > 0) {
                     Bundle b = new Bundle();
                     b.putParcelableArrayList("listaPersonas", fav.getListaPersonas());
                     navController.navigate(R.id.favoriteFragment,b);
