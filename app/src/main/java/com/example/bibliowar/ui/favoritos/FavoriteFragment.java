@@ -1,14 +1,21 @@
 package com.example.bibliowar.ui.favoritos;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.bibliowar.MainActivity;
 import com.example.bibliowar.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +23,9 @@ import com.example.bibliowar.R;
  * create an instance of this fragment.
  */
 public class FavoriteFragment extends Fragment {
+
+    Button favoriteCharacter;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,5 +72,24 @@ public class FavoriteFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_favorite, container, false);
+
+
+    }
+
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        favoriteCharacter = view.findViewById(R.id.button_favorite_character);
+        favoriteCharacter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ((MainActivity)getActivity()).navController.navigate(R.id.personFavoriteFragment);
+
+            }
+        });
+
     }
 }

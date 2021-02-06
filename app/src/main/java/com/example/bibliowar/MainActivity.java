@@ -37,12 +37,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private NavController navController;
+    public  NavController navController;
     private DrawerLayout mDrawerLayout;
     private Button setting;
-    private ArrayList<Persona> listaPersonas = new ArrayList<>();
-    private ArrayList<Lugar> listaLugares = new ArrayList<>();
+    public  ArrayList<Persona> listaPersonas = new ArrayList<>();
+    public ArrayList<Lugar> listaLugares = new ArrayList<>();
     private Favoritos fav;
+    DrawerLayout drawer;
 
 
     @Override
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .setAction("Action", null).show();
             }
         });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         // Passing each menu ID as a set of Ids because each
@@ -79,13 +80,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationUI.setupWithNavController(navigationView, navController);
         navigationView.setNavigationItemSelectedListener(this);
 
-        if(getIntent() != null){
-            if(getIntent().getParcelableExtra("persona") != null){
-                Persona p = getIntent().getParcelableExtra("persona");
-                listaPersonas.add(p);
-                fav.setListaPersonas(listaPersonas);
-            }
-        }
 
     }
 
@@ -142,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 if(listaPersonas.size() > 0) {
                     Bundle b = new Bundle();
-                    b.putParcelableArrayList("listaPersonas", listaPersonas);
+                    b.putParcelableArrayList("listaPersonas", fav.getListaPersonas());
                     navController.navigate(R.id.favoriteFragment,b);
                 }else{
                     Toast.makeText(getApplicationContext(),"NO TIENES FAVORITOS AÚN", Toast.LENGTH_LONG).show();
@@ -153,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
 
-
+        drawer.close();
         return false;
     }
 

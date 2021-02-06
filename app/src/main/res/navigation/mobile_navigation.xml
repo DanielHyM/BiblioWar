@@ -29,5 +29,11 @@
         android:label="@string/favourite"
         tools:layout="@layout/fragment_favorite" />
 
+    <fragment
+        android:id="@+id/personFavoriteFragment"
+        android:name="com.example.bibliowar.ui.favoritos.PersonFavoriteFragment"
+        android:label="@string/character_title"
+        tools:layout="@layout/activity_person_favorite" />
+
 
 </navigation>

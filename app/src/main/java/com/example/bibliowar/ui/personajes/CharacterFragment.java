@@ -125,7 +125,7 @@ public class CharacterFragment extends Fragment {
                         rvPersona = view.findViewById(R.id.rv_characters);
                         glm = new GridLayoutManager(view.getContext(),1);
                         rvPersona.setLayoutManager(glm);
-                        adapter = new CharacterAdapter(listaPersonas, view.getContext());
+                        adapter = new CharacterAdapter(listaPersonas, view.getContext(),CharacterFragment.this);
                         rvPersona.setAdapter(adapter);
 
                     }

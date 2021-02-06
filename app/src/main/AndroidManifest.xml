@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BiblioWar">
-        <activity android:name=".ui.favoritos.PersonFavoriteActivity"></activity>
+        <activity android:name=".ui.favoritos.PersonFavoriteFragment"></activity>
         <activity android:name=".ui.lugares.DetailPlacesActivity" />
         <activity android:name=".ui.personajes.DetailCharacterActivity" />
         <activity android:name=".RegisterActivity" />

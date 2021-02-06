@@ -48,7 +48,7 @@ public class Favoritos implements Parcelable {
         this.user = user;
     }
 
-    public List<Persona> getListaPersonas() {
+    public ArrayList<Persona> getListaPersonas() {
         return listaPersonas;
     }
 
@@ -56,7 +56,7 @@ public class Favoritos implements Parcelable {
         this.listaPersonas = listaPersonas;
     }
 
-    public List<Lugar> getListaLugares() {
+    public ArrayList<Lugar> getListaLugares() {
         return listaLugares;
     }
 
