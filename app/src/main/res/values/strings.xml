@@ -28,6 +28,7 @@
     <string name="home_title">BiblioWar Inicio</string>
     <string name="character_title">Personajes Históricos</string>
     <string name="places_title">Lugares Históricos</string>
+    <string name="favorites_title">Mis favoritos</string>
 
 
 </resources>

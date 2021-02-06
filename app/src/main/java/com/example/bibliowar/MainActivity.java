@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-
         switch (id){
             case R.id.nav_home:
 
@@ -115,8 +114,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_favorites:
-                Toast.makeText(getApplicationContext(),"hola", Toast.LENGTH_SHORT).show();
+                navController.navigate(R.id.favoriteFragment);
                 break;
+
 
         }
 
