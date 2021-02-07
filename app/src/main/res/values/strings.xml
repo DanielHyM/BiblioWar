@@ -31,6 +31,11 @@
     <string name="favorites_title">Mis favoritos</string>
     <string name="favorite_person">Mis Personajes Historicos Favoritos</string>
     <string name="favorite_place">Mis Lugares Historicos Favoritos</string>
+    <string name="add_character">Añadir personaje historico</string>
+    <string name="add_place">Añadir lugar histórico</string>
+    <string name="add_place_name">Nombre del lugar</string>
+    <string name="add_place_country">Pais</string>
+    <string name="add_place_continente">Continente</string>
 
 
 </resources>

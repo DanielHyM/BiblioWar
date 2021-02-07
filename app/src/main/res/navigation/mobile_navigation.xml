@@ -41,5 +41,17 @@
         android:label="@string/places_title"
         tools:layout="@layout/fragment_place_favorite" />
 
+    <fragment
+        android:id="@+id/createCharacterFragment"
+        android:name="com.example.bibliowar.ui.admin.CreateCharacterFragment"
+        android:label="@string/add_character"
+        tools:layout="@layout/fragment_create_character" />
+
+    <fragment
+        android:id="@+id/createPlaceFragment"
+        android:name="com.example.bibliowar.ui.admin.CreatePlaceFragment"
+        android:label="@string/add_place"
+        tools:layout="@layout/fragment_create_place" />
+
 
 </navigation>

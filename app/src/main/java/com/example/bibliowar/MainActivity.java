@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public  ArrayList<Persona> listaPersonas = new ArrayList<>();
     public ArrayList<Lugar> listaLugares = new ArrayList<>();
     public  Favoritos fav;
+    private Button admin_add_place;
     DrawerLayout drawer;
 
 
@@ -58,17 +59,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        admin_add_place = findViewById(R.id.button_menu_admin_add_place);
         FloatingActionButton fab = findViewById(R.id.fab);
+
         if(!fav.getUser().equals("admin@admin.es")) {
             fab.setVisibility(View.INVISIBLE);
+            admin_add_place.setVisibility(View.INVISIBLE);
 
          }else{
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();*/
+
+                    navController.navigate(R.id.createCharacterFragment);
+                }
+            });
+
+            admin_add_place.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    navController.navigate(R.id.createPlaceFragment);
+
                 }
             });
         }
